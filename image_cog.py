@@ -16,7 +16,7 @@ class image_cog(commands.Cog):
 
         self.arguments = {
             "keywords": self.keywords,
-            "limit": 20,
+            "limit": 40,
             "size": "medium",
             "no_directory": True
         }
@@ -41,18 +41,15 @@ class image_cog(commands.Cog):
                 print("Failed to delete %s. reason %s" % (file_path, e))
     
     @commands.command()
-    async def get(self, ctx):
+    async def frog(self, ctx):
         images_size = len(self.image_names)
         random_image = random.randint(0, images_size)
         img_path = self.image_names[random_image]
 
         await ctx.send(file=discord.File(img_path))
-    
-    @commands.command()
-    async def search(self, ctx, *args):
-        self.clear_folder()
 
-        search_args = " ".join(args)
+        self.clear_folder()
+        search_args = "frog"
         self.arguments['keywords'] = search_args
         
         self.response.download(self.arguments)

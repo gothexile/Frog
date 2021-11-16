@@ -4,7 +4,7 @@ from discord.ext import commands
 
 from image_cog import image_cog
 
-Bot = commands.Bot(command_prefix='/')
+Bot = commands.Bot(command_prefix='f!')
 
 Bot.add_cog(image_cog(Bot))
 
